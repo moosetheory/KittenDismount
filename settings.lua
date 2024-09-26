@@ -17,7 +17,7 @@ function KittenDismount_SetDismountArray()
   KittenDismount_disabledSpells = disabled
 end
 
-local category = Settings.RegisterVerticalLayoutCategory("Kitten Dismount")
+local category = Settings.RegisterVerticalLayoutCategory("Kitten Easy Dismount")
 
 local function OnSettingChanged(setting, value)
   KittenDismount_SetDismountArray()
