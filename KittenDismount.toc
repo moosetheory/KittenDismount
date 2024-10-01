@@ -1,11 +1,9 @@
 ## Interface: 110002
-## Version: 0.0.2
+## Version: 0.0.4
 ## Title: Kitten Easy Dismount
 ## Notes: Quick addon to dismount if you are on a flying mount, but on the ground.
 ## Author: Annika
 
-## SavedVariables: KittenDismount_SavedVars
+## SavedVariables: KittenDismountData
 
-dump.lua
-settings.lua
-main.lua
+KittenDismount.lua

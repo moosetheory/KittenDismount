@@ -1,0 +1,10 @@
+{
+  "Lua.diagnostics.globals": [
+    "CreateFrame",
+    "C_ChatInfo",
+    "DEFAULT_CHAT_FRAME",
+    "IsFlying",
+    "Dismount",
+    "Settings"
+  ]
+}
