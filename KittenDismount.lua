@@ -6,7 +6,8 @@ KittenDismount
 Author: Anisa of Scarlet Crusade
 
 Usage: go to Options->AddOns->Kitten Easy Dismount
-]] --
+]]--
+
 KittenDismount = {
   DefaultSettings = {
     surgeForward = true,
@@ -47,6 +48,7 @@ end)
 local category = Settings.RegisterVerticalLayoutCategory("Kitten Easy Dismount")
 
 -- Event Handlers
+---@diagnostic disable-next-line: duplicate-set-field
 function KittenDismount:UNIT_SPELLCAST_SENT(...)
   local unit, target, castGUID, spellID = ...;
   if ((not IsFlying()) and KittenDismount.disabledSpells[spellID]) then
@@ -55,6 +57,7 @@ function KittenDismount:UNIT_SPELLCAST_SENT(...)
 end
 
 -- Setup stuff
+---@diagnostic disable-next-line: duplicate-set-field
 function KittenDismount:VARIABLES_LOADED()
   if (KittenDismountData.DataCode ~= self.DataCode) then
     self:SetDefaults()
@@ -74,7 +77,7 @@ function KittenDismount:VARIABLES_LOADED()
     local variableKey = "surgeForward"
     local defaultValue = Settings.Default.True
     local tooltip = "Automatically dismount when Surge Forward is cast while on the ground."
-  
+
     self:RegisterCheckbox(category, variable, variableKey, name, defaultValue, tooltip)
   end
   do
@@ -83,7 +86,7 @@ function KittenDismount:VARIABLES_LOADED()
     local variableKey = "skywardAscent"
     local defaultValue = Settings.Default.False
     local tooltip = "Automatically dismount when Skyward Ascent is cast while on the ground."
-  
+
     self:RegisterCheckbox(category, variable, variableKey, name, defaultValue, tooltip)
   end
   do
@@ -92,7 +95,7 @@ function KittenDismount:VARIABLES_LOADED()
     local variableKey = "whirlingSurge"
     local defaultValue = Settings.Default.True
     local tooltip = "Automatically dismount when Whirling Surge is cast while on the ground."
-  
+
     self:RegisterCheckbox(category, variable, variableKey, name, defaultValue, tooltip)
   end
   do
@@ -101,7 +104,7 @@ function KittenDismount:VARIABLES_LOADED()
     local variableKey = "aerielHalt"
     local defaultValue = Settings.Default.True
     local tooltip = "Automatically dismount when Aeriel Halt is cast while on the ground."
-  
+
     self:RegisterCheckbox(category, variable, variableKey, name, defaultValue, tooltip)
   end
   do
@@ -110,13 +113,14 @@ function KittenDismount:VARIABLES_LOADED()
     local variableKey = "secondWind"
     local defaultValue = Settings.Default.False
     local tooltip = "Automatically dismount when Second Wind is cast while on the ground."
-  
+
     self:RegisterCheckbox(category, variable, variableKey, name, defaultValue, tooltip)
   end
   Settings.RegisterAddOnCategory(category)
   self:ActivateMod()
 end
 
+---@diagnostic disable-next-line: duplicate-set-field
 function KittenDismount:SaveSettings()
   KittenDismountData.DataCode = KittenDismount.DataCode
   KittenDismountData.Active = KittenDismount.Active
@@ -126,6 +130,7 @@ function KittenDismount:SaveSettings()
   KittenDismountData.arielHalt = KittenDismount.Settings.arielHalt
   KittenDismountData.secondWind = KittenDismount.Settings.secondWind
 end
+---@diagnostic disable-next-line: duplicate-set-field
 function KittenDismount:SetDefaults()
   KittenDismount.Active = KittenDismountData.Active
   KittenDismount.Settings.surgeForward = KittenDismount.DefaultSettings.surgeForward
@@ -135,6 +140,7 @@ function KittenDismount:SetDefaults()
   KittenDismount.Settings.secondWind = KittenDismount.DefaultSettings.secondWind
   self:SaveSettings()
 end
+---@diagnostic disable-next-line: duplicate-set-field
 function KittenDismount:ActivateMod()
   if (KittenDismount.Active) then
     kittenDismountFrame:RegisterEvent("UNIT_SPELLCAST_SENT")
@@ -147,6 +153,7 @@ end
 local function settingChanged(setting, value)
   KittenDismount:SetDismountArray()
 end
+---@diagnostic disable-next-line: duplicate-set-field
 function KittenDismount:SetDismountArray()
   local disabled = {}
 
@@ -156,14 +163,17 @@ function KittenDismount:SetDismountArray()
 
   self.disabledSpells = disabled
 end
+---@diagnostic disable-next-line: duplicate-set-field
 function KittenDismount:RegisterCheckbox(cat, variable, variableKey, name, defaultValue, tooltip)
   local setting = Settings.RegisterAddOnSetting(cat, variable, variableKey, KittenDismountData, Settings.VarType.Boolean, name, defaultValue)
   setting:SetValueChangedCallback(settingChanged)
   Settings.CreateCheckbox(cat, setting, tooltip)
 end
+---@diagnostic disable-next-line: duplicate-set-field
 function KittenDismount:Print(message)
   DEFAULT_CHAT_FRAME:AddMessage("[|c44ff44ffKittenDismount|r] " .. tostring(message))
 end
+---@diagnostic disable-next-line: duplicate-set-field
 function KittenDismount:Error(message)
   DEFAULT_CHAT_FRAME:AddMessage("[|c44ff44ffKittenDismount|r] |cff0000ff" .. tostring(message) .. "|r")
 end
