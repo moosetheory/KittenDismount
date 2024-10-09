@@ -1,5 +1,5 @@
 ## Interface: 110002
-## Version: 0.0.5
+## Version: 0.0.6
 ## Title: Kitten Easy Dismount
 ## Notes: Quick addon to dismount if you are on a skyriding mount, but on the ground.
 ## Author: Annika
