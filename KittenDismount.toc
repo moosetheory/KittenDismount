@@ -4,6 +4,7 @@
 ## Notes: Quick addon to dismount if you are on a skyriding mount, but on the ground.
 ## Author: Annika
 ## X-Wago-ID: bGoM1p60
+## X-Curse-Project-ID: 1117964
 
 ## SavedVariables: KittenDismountData
 
