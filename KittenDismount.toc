@@ -5,6 +5,7 @@
 ## Author: Annika
 ## X-Wago-ID: bGoM1p60
 ## X-Curse-Project-ID: 1117964
+## X-WoWI-ID: 26858
 
 ## SavedVariables: KittenDismountData
 
