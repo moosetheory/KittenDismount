@@ -13,7 +13,7 @@ KittenDismount = {
     surgeForward = true,
     skywardAscent = false,
     whirlingSurge = true,
-    arielHalt = true,
+    aerialHalt = true,
     secondWind = false,
     Active = true,
   },
@@ -26,7 +26,7 @@ KittenDismount = {
     surgeForward = 372608,
     skywardAscent = 372610,
     whirlingSurge = 361584,
-    aerielHalt = 403092,
+    aerialHalt = 403092,
     secondWind = 425782,
   },
 }
@@ -67,7 +67,7 @@ function KittenDismount:VARIABLES_LOADED()
     surgeForward = KittenDismountData.surgeForward,
     skywardAscent = KittenDismountData.skywardAscent,
     whirlingSurge = KittenDismountData.whirlingSurge,
-    arielHalt = KittenDismountData.arielHalt,
+    aerialHalt = KittenDismountData.aerialHalt,
     secondWind = KittenDismountData.secondWind,
   }
   self:SetDismountArray()
@@ -99,11 +99,11 @@ function KittenDismount:VARIABLES_LOADED()
     self:RegisterCheckbox(category, variable, variableKey, name, defaultValue, tooltip)
   end
   do
-    local name = "Aeriel Halt"
-    local variable = "aerielHaltToggle"
-    local variableKey = "aerielHalt"
+    local name = "Aerial Halt"
+    local variable = "aerialHaltToggle"
+    local variableKey = "aerialHalt"
     local defaultValue = Settings.Default.True
-    local tooltip = "Automatically dismount when Aeriel Halt is cast while on the ground."
+    local tooltip = "Automatically dismount when Aerial Halt is cast while on the ground."
 
     self:RegisterCheckbox(category, variable, variableKey, name, defaultValue, tooltip)
   end
@@ -127,7 +127,7 @@ function KittenDismount:SaveSettings()
   KittenDismountData.surgeForward = KittenDismount.Settings.surgeForward
   KittenDismountData.skywardAscent = KittenDismount.Settings.skywardAscent
   KittenDismountData.whirlingSurge = KittenDismount.Settings.whirlingSurge
-  KittenDismountData.arielHalt = KittenDismount.Settings.arielHalt
+  KittenDismountData.aerialHalt = KittenDismount.Settings.aerialHalt
   KittenDismountData.secondWind = KittenDismount.Settings.secondWind
 end
 ---@diagnostic disable-next-line: duplicate-set-field
@@ -136,7 +136,7 @@ function KittenDismount:SetDefaults()
   KittenDismount.Settings.surgeForward = KittenDismount.DefaultSettings.surgeForward
   KittenDismount.Settings.skywardAscent = KittenDismount.DefaultSettings.skywardAscent
   KittenDismount.Settings.whirlingSurge = KittenDismount.DefaultSettings.whirlingSurge
-  KittenDismount.Settings.arielHalt = KittenDismount.DefaultSettings.arielHalt
+  KittenDismount.Settings.aerialHalt = KittenDismount.DefaultSettings.aerialHalt
   KittenDismount.Settings.secondWind = KittenDismount.DefaultSettings.secondWind
   self:SaveSettings()
 end
